@@ -1,2 +1,7 @@
-# attendance-flutter-flow
-Flutter flow github repository (for testing)
+# attendance-flutter-flow-local
+
+A new Flutter project.
+
+## Getting Started
+
+FlutterFlow projects are built to run on the Flutter _stable_ release.
