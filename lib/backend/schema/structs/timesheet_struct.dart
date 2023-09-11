@@ -23,20 +23,20 @@ class TimesheetStruct extends BaseStruct {
   void incrementId(int amount) => _id = id + amount;
   bool hasId() => _id != null;
 
-  // "userId" field.
+  // "user_id" field.
   int? _userId;
   int get userId => _userId ?? 0;
   set userId(int? val) => _userId = val;
   void incrementUserId(int amount) => _userId = userId + amount;
   bool hasUserId() => _userId != null;
 
-  // "timeIn" field.
+  // "time_in" field.
   DateTime? _timeIn;
   DateTime? get timeIn => _timeIn;
   set timeIn(DateTime? val) => _timeIn = val;
   bool hasTimeIn() => _timeIn != null;
 
-  // "timeOut" field.
+  // "time_out" field.
   DateTime? _timeOut;
   DateTime? get timeOut => _timeOut;
   set timeOut(DateTime? val) => _timeOut = val;
@@ -44,9 +44,9 @@ class TimesheetStruct extends BaseStruct {
 
   static TimesheetStruct fromMap(Map<String, dynamic> data) => TimesheetStruct(
         id: castToType<int>(data['id']),
-        userId: castToType<int>(data['userId']),
-        timeIn: data['timeIn'] as DateTime?,
-        timeOut: data['timeOut'] as DateTime?,
+        userId: castToType<int>(data['user_id']),
+        timeIn: data['time_in'] as DateTime?,
+        timeOut: data['time_out'] as DateTime?,
       );
 
   static TimesheetStruct? maybeFromMap(dynamic data) =>
@@ -54,9 +54,9 @@ class TimesheetStruct extends BaseStruct {
 
   Map<String, dynamic> toMap() => {
         'id': _id,
-        'userId': _userId,
-        'timeIn': _timeIn,
-        'timeOut': _timeOut,
+        'user_id': _userId,
+        'time_in': _timeIn,
+        'time_out': _timeOut,
       }.withoutNulls;
 
   @override
@@ -65,15 +65,15 @@ class TimesheetStruct extends BaseStruct {
           _id,
           ParamType.int,
         ),
-        'userId': serializeParam(
+        'user_id': serializeParam(
           _userId,
           ParamType.int,
         ),
-        'timeIn': serializeParam(
+        'time_in': serializeParam(
           _timeIn,
           ParamType.DateTime,
         ),
-        'timeOut': serializeParam(
+        'time_out': serializeParam(
           _timeOut,
           ParamType.DateTime,
         ),
@@ -87,17 +87,17 @@ class TimesheetStruct extends BaseStruct {
           false,
         ),
         userId: deserializeParam(
-          data['userId'],
+          data['user_id'],
           ParamType.int,
           false,
         ),
         timeIn: deserializeParam(
-          data['timeIn'],
+          data['time_in'],
           ParamType.DateTime,
           false,
         ),
         timeOut: deserializeParam(
-          data['timeOut'],
+          data['time_out'],
           ParamType.DateTime,
           false,
         ),

@@ -113,7 +113,7 @@ class Repo {
         tbl,
         col,
         where: 'id=?', // Temporary column for softDelete
-        whereArgs: [id, 0],
+        whereArgs: [id],
         conflictAlgorithm: sql.ConflictAlgorithm.rollback,
       );
       return res;
@@ -130,7 +130,7 @@ class Repo {
         tbl,
         {'isDeleted': 1}, // Temporary column for softDelete
         where: 'id = ?',
-        whereArgs: [id, 0],
+        whereArgs: [id],
         conflictAlgorithm: sql.ConflictAlgorithm.rollback,
       );
       return true;
