@@ -291,6 +291,7 @@ class _AuthenticationPageWidgetState extends State<AuthenticationPageWidget> {
                                       },
                                     );
                                   }
+
                                   setState(() {});
                                 },
                                 text: 'Sign In',

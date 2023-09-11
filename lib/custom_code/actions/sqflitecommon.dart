@@ -8,17 +8,19 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import './user_database_helper.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
-Future<List<UsersStruct>?> loginAction(
-  String userName,
-  String password,
-) async {
-  var response = await UserDatabaseHelper.login(userName, password);
+Future sqflitecommon() async {
+  // if (!kIsWeb) {
+  //   sqfliteFfiInit();
+  //   // Change the default factory
+  //   databaseFactory = databaseFactoryFfi;
+  // }
 
-  if (response.length > 0) {
-    return response;
-  } else {
-    return null;
-  }
+  sqfliteFfiInit();
+  // Change the default factory
+  databaseFactory = databaseFactoryFfi;
+
+  // Add your function code here!
 }

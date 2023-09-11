@@ -686,6 +686,7 @@ class _RegistrationPageWidgetState extends State<RegistrationPageWidget> {
                                             },
                                           );
                                         }
+
                                         setState(() {});
                                       },
                                 text: 'Sign Up',

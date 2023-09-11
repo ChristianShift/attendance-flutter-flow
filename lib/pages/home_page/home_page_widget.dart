@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/gestures.dart';
@@ -175,15 +176,15 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       fontFamily: 'Montserrat',
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      fontSize: 17.0,
+                                      fontSize: 19.0,
                                       fontWeight: FontWeight.w600,
                                     ),
                               ),
                               TextSpan(
-                                text: random_data.randomName(true, true),
+                                text: FFAppState().firstName,
                                 style: TextStyle(
                                   fontWeight: FontWeight.w500,
-                                  fontSize: 18.0,
+                                  fontSize: 19.0,
                                 ),
                               )
                             ],
@@ -201,77 +202,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            RichText(
-                              textScaleFactor:
-                                  MediaQuery.of(context).textScaleFactor,
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: '',
-                                    style: GoogleFonts.getFont(
-                                      'Poppins',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 19.0,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: dateTimeFormat(
-                                        'MMMMEEEEd', getCurrentTimestamp),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Montserrat',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          fontSize: 19.0,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                  )
-                                ],
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 18.0,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                              ),
-                            ),
-                            RichText(
-                              textScaleFactor:
-                                  MediaQuery.of(context).textScaleFactor,
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: dateTimeFormat(
-                                        'jms', getCurrentTimestamp),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Montserrat',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          fontSize: 15.0,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                  )
-                                ],
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      fontSize: 15.0,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                              ),
-                            ),
-                          ],
+                        Container(
+                          width: 170.0,
+                          height: 60.0,
+                          child: custom_widgets.ReactiveDate(
+                            width: 170.0,
+                            height: 60.0,
+                          ),
                         ),
                       ],
                     ),
