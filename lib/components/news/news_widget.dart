@@ -57,7 +57,7 @@ class _NewsWidgetState extends State<NewsWidget> {
                 alignment: AlignmentDirectional(0.0, 1.0),
                 children: [
                   Align(
-                    alignment: AlignmentDirectional(0.0, -1.0),
+                    alignment: AlignmentDirectional(0.00, -1.00),
                     child: ClipRRect(
                       borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(0.0),
@@ -74,7 +74,7 @@ class _NewsWidgetState extends State<NewsWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 1.0),
+                    alignment: AlignmentDirectional(0.00, 1.00),
                     child: Padding(
                       padding:
                           EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 24.0, 0.0),

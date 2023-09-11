@@ -1,9 +1,8 @@
-import 'package:attendance_flutter_flow_local/backend/schema/structs/index.dart';
-
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/random_data_util.dart' as random_data;
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,7 +19,7 @@ class AuthenticationPageModel extends FlutterFlowModel {
   TextEditingController? passwordController;
   late bool passwordVisibility;
   String? Function(BuildContext, String?)? passwordControllerValidator;
-  // Stores action output result for [Custom Action - createUserAction] action in Button widget.
+  // Stores action output result for [Custom Action - loginAction] action in Button-Login widget.
   List<UsersStruct>? loginResponse;
 
   /// Initialization and disposal methods.

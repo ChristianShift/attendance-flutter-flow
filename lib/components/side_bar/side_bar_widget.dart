@@ -84,7 +84,7 @@ class _SideBarWidgetState extends State<SideBarWidget> {
                                 borderRadius: BorderRadius.circular(12.0),
                                 shape: BoxShape.rectangle,
                               ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.00, 0.00),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     2.0, 2.0, 2.0, 2.0),
@@ -196,7 +196,7 @@ class _SideBarWidgetState extends State<SideBarWidget> {
                                   children: [
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(0.95, 0.0),
+                                          AlignmentDirectional(0.95, 0.00),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
@@ -209,7 +209,7 @@ class _SideBarWidgetState extends State<SideBarWidget> {
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-0.85, 0.0),
+                                          AlignmentDirectional(-0.85, 0.00),
                                       child: Container(
                                         width: 36.0,
                                         height: 36.0,
@@ -275,7 +275,7 @@ class _SideBarWidgetState extends State<SideBarWidget> {
                                   children: [
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-0.9, 0.0),
+                                          AlignmentDirectional(-0.90, 0.00),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             8.0, 2.0, 0.0, 0.0),
@@ -287,7 +287,8 @@ class _SideBarWidgetState extends State<SideBarWidget> {
                                       ),
                                     ),
                                     Align(
-                                      alignment: AlignmentDirectional(0.9, 0.0),
+                                      alignment:
+                                          AlignmentDirectional(0.90, 0.00),
                                       child: Container(
                                         width: 36.0,
                                         height: 36.0,
@@ -390,7 +391,7 @@ class _SideBarWidgetState extends State<SideBarWidget> {
                                 ),
                                 Expanded(
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.9, 0.0),
+                                    alignment: AlignmentDirectional(0.90, 0.00),
                                     child: Icon(
                                       Icons.arrow_forward_ios,
                                       color: FlutterFlowTheme.of(context)
@@ -478,7 +479,7 @@ class _SideBarWidgetState extends State<SideBarWidget> {
                                 ),
                                 Expanded(
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.9, 0.0),
+                                    alignment: AlignmentDirectional(0.90, 0.00),
                                     child: Icon(
                                       Icons.arrow_forward_ios,
                                       color: FlutterFlowTheme.of(context)
@@ -566,7 +567,7 @@ class _SideBarWidgetState extends State<SideBarWidget> {
                                 ),
                                 Expanded(
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.9, 0.0),
+                                    alignment: AlignmentDirectional(0.90, 0.00),
                                     child: Icon(
                                       Icons.arrow_forward_ios,
                                       color: FlutterFlowTheme.of(context)

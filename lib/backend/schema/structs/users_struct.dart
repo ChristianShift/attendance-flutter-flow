@@ -7,27 +7,25 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class UsersStruct extends BaseStruct {
   UsersStruct({
-    int? userId,
+    int? id,
     String? userName,
     String? password,
     String? firstName,
     String? lastName,
-    int? isDeleted,
-  })  : _userId = userId,
+  })  : _id = id,
         _userName = userName,
         _password = password,
         _firstName = firstName,
-        _lastName = lastName,
-        _isDeleted = isDeleted;
+        _lastName = lastName;
 
-  // "userId" field.
-  int? _userId;
-  int get userId => _userId ?? 0;
-  set userId(int? val) => _userId = val;
-  void incrementUserId(int amount) => _userId = userId + amount;
-  bool hasUserId() => _userId != null;
+  // "id" field.
+  int? _id;
+  int get id => _id ?? 0;
+  set id(int? val) => _id = val;
+  void incrementId(int amount) => _id = id + amount;
+  bool hasId() => _id != null;
 
-  // "userName" field.
+  // "user_name" field.
   String? _userName;
   String get userName => _userName ?? '';
   set userName(String? val) => _userName = val;
@@ -39,53 +37,44 @@ class UsersStruct extends BaseStruct {
   set password(String? val) => _password = val;
   bool hasPassword() => _password != null;
 
-  // "firstName" field.
+  // "first_name" field.
   String? _firstName;
   String get firstName => _firstName ?? '';
   set firstName(String? val) => _firstName = val;
   bool hasFirstName() => _firstName != null;
 
-  // "lastName" field.
+  // "last_name" field.
   String? _lastName;
   String get lastName => _lastName ?? '';
   set lastName(String? val) => _lastName = val;
   bool hasLastName() => _lastName != null;
 
-  // "isDeleted" field.
-  int? _isDeleted;
-  int get isDeleted => _isDeleted ?? 0;
-  set isDeleted(int? val) => _isDeleted = val;
-  void incrementIsDeleted(int amount) => _isDeleted = isDeleted + amount;
-  bool hasIsDeleted() => _isDeleted != null;
-
   static UsersStruct fromMap(Map<String, dynamic> data) => UsersStruct(
-        userId: castToType<int>(data['userId']),
-        userName: data['userName'] as String?,
+        id: castToType<int>(data['id']),
+        userName: data['user_name'] as String?,
         password: data['password'] as String?,
-        firstName: data['firstName'] as String?,
-        lastName: data['lastName'] as String?,
-        isDeleted: castToType<int>(data['isDeleted']),
+        firstName: data['first_name'] as String?,
+        lastName: data['last_name'] as String?,
       );
 
   static UsersStruct? maybeFromMap(dynamic data) =>
       data is Map<String, dynamic> ? UsersStruct.fromMap(data) : null;
 
   Map<String, dynamic> toMap() => {
-        'userId': _userId,
-        'userName': _userName,
+        'id': _id,
+        'user_name': _userName,
         'password': _password,
-        'firstName': _firstName,
-        'lastName': _lastName,
-        'isDeleted': _isDeleted,
+        'first_name': _firstName,
+        'last_name': _lastName,
       }.withoutNulls;
 
   @override
   Map<String, dynamic> toSerializableMap() => {
-        'userId': serializeParam(
-          _userId,
+        'id': serializeParam(
+          _id,
           ParamType.int,
         ),
-        'userName': serializeParam(
+        'user_name': serializeParam(
           _userName,
           ParamType.String,
         ),
@@ -93,29 +82,25 @@ class UsersStruct extends BaseStruct {
           _password,
           ParamType.String,
         ),
-        'firstName': serializeParam(
+        'first_name': serializeParam(
           _firstName,
           ParamType.String,
         ),
-        'lastName': serializeParam(
+        'last_name': serializeParam(
           _lastName,
           ParamType.String,
-        ),
-        'isDeleted': serializeParam(
-          _isDeleted,
-          ParamType.int,
         ),
       }.withoutNulls;
 
   static UsersStruct fromSerializableMap(Map<String, dynamic> data) =>
       UsersStruct(
-        userId: deserializeParam(
-          data['userId'],
+        id: deserializeParam(
+          data['id'],
           ParamType.int,
           false,
         ),
         userName: deserializeParam(
-          data['userName'],
+          data['user_name'],
           ParamType.String,
           false,
         ),
@@ -125,18 +110,13 @@ class UsersStruct extends BaseStruct {
           false,
         ),
         firstName: deserializeParam(
-          data['firstName'],
+          data['first_name'],
           ParamType.String,
           false,
         ),
         lastName: deserializeParam(
-          data['lastName'],
+          data['last_name'],
           ParamType.String,
-          false,
-        ),
-        isDeleted: deserializeParam(
-          data['isDeleted'],
-          ParamType.int,
           false,
         ),
       );
@@ -147,32 +127,29 @@ class UsersStruct extends BaseStruct {
   @override
   bool operator ==(Object other) {
     return other is UsersStruct &&
-        userId == other.userId &&
+        id == other.id &&
         userName == other.userName &&
         password == other.password &&
         firstName == other.firstName &&
-        lastName == other.lastName &&
-        isDeleted == other.isDeleted;
+        lastName == other.lastName;
   }
 
   @override
-  int get hashCode => const ListEquality()
-      .hash([userId, userName, password, firstName, lastName, isDeleted]);
+  int get hashCode =>
+      const ListEquality().hash([id, userName, password, firstName, lastName]);
 }
 
 UsersStruct createUsersStruct({
-  int? userId,
+  int? id,
   String? userName,
   String? password,
   String? firstName,
   String? lastName,
-  int? isDeleted,
 }) =>
     UsersStruct(
-      userId: userId,
+      id: id,
       userName: userName,
       password: password,
       firstName: firstName,
       lastName: lastName,
-      isDeleted: isDeleted,
     );

@@ -7,17 +7,17 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import 'repo.dart';
 import 'user_model.dart';
 
 Future<List<UsersStruct>?> loginAction(
   String userName,
   String password,
 ) async {
-  var response = await UserModel.login(userName, password);
+  var q = await UserModel.login(userName, password);
 
-  if (response.length > 0) {
-    return response;
+  print('Logging Session: $q');
+  if (q.length > 0) {
+    return [UsersStruct.fromMap(q[0])]; // Using user DataType, used q[0] to get the first index
   } else {
     return null;
   }

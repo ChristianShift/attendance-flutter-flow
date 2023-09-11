@@ -40,10 +40,10 @@ class UserModel {
       if(h.match(pWord)) {
         return res;
       } else {
-        return {};
+        return [{}];
       }
     } else {
-      return {};
+      return [{}];
     }
   }
 

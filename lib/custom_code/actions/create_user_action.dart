@@ -29,7 +29,7 @@ Future<String> createUserAction(
   };
 
   //code here
-  final q = await UserModel.createUser(col);
+  var q = await UserModel.createUser(col);
   if (q > 0) {
     response = 'success';
   }

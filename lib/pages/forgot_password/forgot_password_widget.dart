@@ -51,7 +51,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
         elevation: 0.0,
       ),
       body: Align(
-        alignment: AlignmentDirectional(0.0, -1.0),
+        alignment: AlignmentDirectional(0.00, -1.00),
         child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
           child: Container(
@@ -140,7 +140,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                   ),
                 ),
                 Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.00, 0.00),
                   child: Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
