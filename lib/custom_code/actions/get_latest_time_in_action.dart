@@ -16,9 +16,8 @@ Future<TimesheetStruct?> getLatestTimeInAction(int userId) async {
   var q = await TimesheetModel.getLatestTimeIn(userId);
   print('Logging Session: $q');
   if (q.length > 0) {
-    return [
-      UsersStruct.fromMap(q[0])
-    ]; // Using user DataType, used q[0] to get the first index
+    return TimesheetStruct.fromMap(
+        q[0]); // Using user DataType, used q[0] to get the first index
   } else {
     return null;
   }

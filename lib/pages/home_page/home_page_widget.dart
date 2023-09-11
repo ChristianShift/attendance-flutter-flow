@@ -98,7 +98,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
       _model.latestTimeInResponse = await actions.getLatestTimeInAction(
         FFAppState().userId,
       );
-      FFAppState().update(() {
+      setState(() {
         FFAppState().timesheetId = _model.latestTimeInResponse!.id;
         FFAppState().timeIn = _model.latestTimeInResponse?.timeIn;
         FFAppState().timeOut = _model.latestTimeInResponse?.timeOut;

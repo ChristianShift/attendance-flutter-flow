@@ -588,7 +588,7 @@ class _SideBarWidgetState extends State<SideBarWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 250.0, 0.0, 20.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 210.0, 0.0, 20.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -598,7 +598,24 @@ class _SideBarWidgetState extends State<SideBarWidget> {
                             onPressed: () async {
                               FFAppState().update(() {
                                 FFAppState().timeOut = null;
+                                FFAppState().timeIn = null;
+                                FFAppState().lastName = '';
+                                FFAppState().userId = 0;
+                                FFAppState().firstName = '';
+                                FFAppState().userName = '';
+                                FFAppState().timesheetId = 0;
                               });
+
+                              context.goNamed(
+                                'AuthenticationPage',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
+                              );
                             },
                             text: 'Logout',
                             options: FFButtonOptions(

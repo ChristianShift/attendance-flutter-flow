@@ -12,11 +12,15 @@ class UsersStruct extends BaseStruct {
     String? password,
     String? firstName,
     String? lastName,
+    DateTime? timeIn,
+    DateTime? timeOut,
   })  : _id = id,
         _userName = userName,
         _password = password,
         _firstName = firstName,
-        _lastName = lastName;
+        _lastName = lastName,
+        _timeIn = timeIn,
+        _timeOut = timeOut;
 
   // "id" field.
   int? _id;
@@ -49,12 +53,26 @@ class UsersStruct extends BaseStruct {
   set lastName(String? val) => _lastName = val;
   bool hasLastName() => _lastName != null;
 
+  // "time_in" field.
+  DateTime? _timeIn;
+  DateTime? get timeIn => _timeIn;
+  set timeIn(DateTime? val) => _timeIn = val;
+  bool hasTimeIn() => _timeIn != null;
+
+  // "time_out" field.
+  DateTime? _timeOut;
+  DateTime? get timeOut => _timeOut;
+  set timeOut(DateTime? val) => _timeOut = val;
+  bool hasTimeOut() => _timeOut != null;
+
   static UsersStruct fromMap(Map<String, dynamic> data) => UsersStruct(
         id: castToType<int>(data['id']),
         userName: data['user_name'] as String?,
         password: data['password'] as String?,
         firstName: data['first_name'] as String?,
         lastName: data['last_name'] as String?,
+        timeIn: data['time_in'] as DateTime?,
+        timeOut: data['time_out'] as DateTime?,
       );
 
   static UsersStruct? maybeFromMap(dynamic data) =>
@@ -66,6 +84,8 @@ class UsersStruct extends BaseStruct {
         'password': _password,
         'first_name': _firstName,
         'last_name': _lastName,
+        'time_in': _timeIn,
+        'time_out': _timeOut,
       }.withoutNulls;
 
   @override
@@ -89,6 +109,14 @@ class UsersStruct extends BaseStruct {
         'last_name': serializeParam(
           _lastName,
           ParamType.String,
+        ),
+        'time_in': serializeParam(
+          _timeIn,
+          ParamType.DateTime,
+        ),
+        'time_out': serializeParam(
+          _timeOut,
+          ParamType.DateTime,
         ),
       }.withoutNulls;
 
@@ -119,6 +147,16 @@ class UsersStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        timeIn: deserializeParam(
+          data['time_in'],
+          ParamType.DateTime,
+          false,
+        ),
+        timeOut: deserializeParam(
+          data['time_out'],
+          ParamType.DateTime,
+          false,
+        ),
       );
 
   @override
@@ -131,12 +169,14 @@ class UsersStruct extends BaseStruct {
         userName == other.userName &&
         password == other.password &&
         firstName == other.firstName &&
-        lastName == other.lastName;
+        lastName == other.lastName &&
+        timeIn == other.timeIn &&
+        timeOut == other.timeOut;
   }
 
   @override
-  int get hashCode =>
-      const ListEquality().hash([id, userName, password, firstName, lastName]);
+  int get hashCode => const ListEquality()
+      .hash([id, userName, password, firstName, lastName, timeIn, timeOut]);
 }
 
 UsersStruct createUsersStruct({
@@ -145,6 +185,8 @@ UsersStruct createUsersStruct({
   String? password,
   String? firstName,
   String? lastName,
+  DateTime? timeIn,
+  DateTime? timeOut,
 }) =>
     UsersStruct(
       id: id,
@@ -152,4 +194,6 @@ UsersStruct createUsersStruct({
       password: password,
       firstName: firstName,
       lastName: lastName,
+      timeIn: timeIn,
+      timeOut: timeOut,
     );
