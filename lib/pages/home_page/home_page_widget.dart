@@ -1,3 +1,4 @@
+import '/backend/schema/structs/index.dart';
 import '/components/side_bar/side_bar_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_charts.dart';
@@ -5,7 +6,9 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/gestures.dart';
@@ -89,6 +92,18 @@ class _HomePageWidgetState extends State<HomePageWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => HomePageModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.latestTimeInResponse = await actions.getLatestTimeInAction(
+        FFAppState().userId,
+      );
+      FFAppState().update(() {
+        FFAppState().timesheetId = _model.latestTimeInResponse!.id;
+        FFAppState().timeIn = _model.latestTimeInResponse?.timeIn;
+        FFAppState().timeOut = _model.latestTimeInResponse?.timeOut;
+      });
+    });
 
     setupAnimations(
       animationsMap.values.where((anim) =>
@@ -182,7 +197,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               ),
                               TextSpan(
                                 text: valueOrDefault<String>(
-                                  FFAppState().firstName,
+                                  functions.capitalizeFunction(
+                                      FFAppState().firstName),
                                   'Juan',
                                 ),
                                 style: TextStyle(
@@ -206,11 +222,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          width: 150.0,
-                          height: 60.0,
+                          width: 180.0,
+                          height: 55.0,
                           child: custom_widgets.ReactiveDate(
-                            width: 150.0,
-                            height: 60.0,
+                            width: 180.0,
+                            height: 55.0,
                           ),
                         ),
                       ],
@@ -218,7 +234,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 50.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 45.0, 0.0, 50.0),
                     child: Container(
                       width: 150.0,
                       height: 150.0,
@@ -226,7 +242,15 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         boxShadow: [
                           BoxShadow(
                             blurRadius: 100.0,
-                            color: FlutterFlowTheme.of(context).primary,
+                            color: () {
+                              if (FFAppState().timeIn == null) {
+                                return Color(0xFF52A755);
+                              } else if (FFAppState().timeOut == null) {
+                                return Color(0xFFA75055);
+                              } else {
+                                return Color(0x00000000);
+                              }
+                            }(),
                             offset: Offset(0.0, 0.0),
                             spreadRadius: 0.5,
                           )
@@ -234,17 +258,52 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         shape: BoxShape.circle,
                       ),
                       child: FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
-                        },
-                        text: 'Clock In',
+                        onPressed: (FFAppState().timeIn != null) &&
+                                (FFAppState().timeOut != null)
+                            ? null
+                            : () async {
+                                if (FFAppState().timeIn == null) {
+                                  _model.clockInResponse =
+                                      await actions.clockInAction(
+                                    FFAppState().userId,
+                                  );
+                                  setState(() {
+                                    FFAppState().timesheetId =
+                                        _model.clockInResponse!;
+                                    FFAppState().timeIn = getCurrentTimestamp;
+                                  });
+                                } else {
+                                  _model.clockOutResponse =
+                                      await actions.clockOutAction(
+                                    FFAppState().timesheetId,
+                                  );
+                                  setState(() {
+                                    FFAppState().timesheetId =
+                                        _model.clockOutResponse!;
+                                    FFAppState().timeOut = getCurrentTimestamp;
+                                  });
+                                }
+
+                                setState(() {});
+                              },
+                        text: FFAppState().timeIn == null
+                            ? 'Clock In'
+                            : 'Clock Out',
                         options: FFButtonOptions(
                           height: 110.0,
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Color(0xFF895DCF),
+                          color: () {
+                            if (FFAppState().timeIn == null) {
+                              return Color(0xFF52A755);
+                            } else if (FFAppState().timeOut == null) {
+                              return Color(0xFFA75055);
+                            } else {
+                              return Color(0x00000000);
+                            }
+                          }(),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Montserrat',
@@ -255,7 +314,6 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             width: 1.0,
                           ),
                           borderRadius: BorderRadius.circular(100.0),
-                          hoverElevation: 100.0,
                         ),
                       ),
                     ),
@@ -978,7 +1036,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
               ).animateOnPageLoad(
                   animationsMap['containerOnPageLoadAnimation2']!),
             ),
-          ],
+          ].addToEnd(SizedBox(height: 125.0)),
         ),
       ),
     );

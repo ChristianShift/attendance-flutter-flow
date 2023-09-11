@@ -34,11 +34,13 @@ class TimesheetModel {
   }
 
   static Future<dynamic> getLatestTimeIn(int userId) async {
+    Map<String, dynamic> empty = {};
     String dtStr = DateFormat("yyyy-MM-dd").format(DateTime.now());
     try {
-      return await Repo.rawQuery(
+      var q = await Repo.rawQuery(
           'SELECT id, MAX(time_in) as time_in, time_out FROM timesheet WHERE user_id=? AND DATE(time_in) =?',
           [userId, dtStr]);
+      return q;
     } catch (err) {
       debugPrint('Repo Error: $err');
       throw Error();

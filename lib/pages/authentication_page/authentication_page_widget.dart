@@ -252,8 +252,7 @@ class _AuthenticationPageWidgetState extends State<AuthenticationPageWidget> {
                                     _model.passwordController.text,
                                   );
                                   if ((_model.loginResponse!.length > 0) &&
-                                      (_model.loginResponse?.first?.id !=
-                                          null)) {
+                                      (_model.loginResponse?.first?.id != 0)) {
                                     FFAppState().userName =
                                         _model.loginResponse!.first.userName;
                                     FFAppState().userId =

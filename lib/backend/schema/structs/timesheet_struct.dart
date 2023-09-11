@@ -7,25 +7,21 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class TimesheetStruct extends BaseStruct {
   TimesheetStruct({
-    int? timesheetId,
+    int? id,
     int? userId,
     DateTime? timeIn,
     DateTime? timeOut,
-    DateTime? dateCreated,
-    DateTime? dateModified,
-  })  : _timesheetId = timesheetId,
+  })  : _id = id,
         _userId = userId,
         _timeIn = timeIn,
-        _timeOut = timeOut,
-        _dateCreated = dateCreated,
-        _dateModified = dateModified;
+        _timeOut = timeOut;
 
-  // "timesheetId" field.
-  int? _timesheetId;
-  int get timesheetId => _timesheetId ?? 0;
-  set timesheetId(int? val) => _timesheetId = val;
-  void incrementTimesheetId(int amount) => _timesheetId = timesheetId + amount;
-  bool hasTimesheetId() => _timesheetId != null;
+  // "id" field.
+  int? _id;
+  int get id => _id ?? 0;
+  set id(int? val) => _id = val;
+  void incrementId(int amount) => _id = id + amount;
+  bool hasId() => _id != null;
 
   // "userId" field.
   int? _userId;
@@ -46,43 +42,27 @@ class TimesheetStruct extends BaseStruct {
   set timeOut(DateTime? val) => _timeOut = val;
   bool hasTimeOut() => _timeOut != null;
 
-  // "dateCreated" field.
-  DateTime? _dateCreated;
-  DateTime? get dateCreated => _dateCreated;
-  set dateCreated(DateTime? val) => _dateCreated = val;
-  bool hasDateCreated() => _dateCreated != null;
-
-  // "dateModified" field.
-  DateTime? _dateModified;
-  DateTime? get dateModified => _dateModified;
-  set dateModified(DateTime? val) => _dateModified = val;
-  bool hasDateModified() => _dateModified != null;
-
   static TimesheetStruct fromMap(Map<String, dynamic> data) => TimesheetStruct(
-        timesheetId: castToType<int>(data['timesheetId']),
+        id: castToType<int>(data['id']),
         userId: castToType<int>(data['userId']),
         timeIn: data['timeIn'] as DateTime?,
         timeOut: data['timeOut'] as DateTime?,
-        dateCreated: data['dateCreated'] as DateTime?,
-        dateModified: data['dateModified'] as DateTime?,
       );
 
   static TimesheetStruct? maybeFromMap(dynamic data) =>
       data is Map<String, dynamic> ? TimesheetStruct.fromMap(data) : null;
 
   Map<String, dynamic> toMap() => {
-        'timesheetId': _timesheetId,
+        'id': _id,
         'userId': _userId,
         'timeIn': _timeIn,
         'timeOut': _timeOut,
-        'dateCreated': _dateCreated,
-        'dateModified': _dateModified,
       }.withoutNulls;
 
   @override
   Map<String, dynamic> toSerializableMap() => {
-        'timesheetId': serializeParam(
-          _timesheetId,
+        'id': serializeParam(
+          _id,
           ParamType.int,
         ),
         'userId': serializeParam(
@@ -97,20 +77,12 @@ class TimesheetStruct extends BaseStruct {
           _timeOut,
           ParamType.DateTime,
         ),
-        'dateCreated': serializeParam(
-          _dateCreated,
-          ParamType.DateTime,
-        ),
-        'dateModified': serializeParam(
-          _dateModified,
-          ParamType.DateTime,
-        ),
       }.withoutNulls;
 
   static TimesheetStruct fromSerializableMap(Map<String, dynamic> data) =>
       TimesheetStruct(
-        timesheetId: deserializeParam(
-          data['timesheetId'],
+        id: deserializeParam(
+          data['id'],
           ParamType.int,
           false,
         ),
@@ -129,16 +101,6 @@ class TimesheetStruct extends BaseStruct {
           ParamType.DateTime,
           false,
         ),
-        dateCreated: deserializeParam(
-          data['dateCreated'],
-          ParamType.DateTime,
-          false,
-        ),
-        dateModified: deserializeParam(
-          data['dateModified'],
-          ParamType.DateTime,
-          false,
-        ),
       );
 
   @override
@@ -147,32 +109,25 @@ class TimesheetStruct extends BaseStruct {
   @override
   bool operator ==(Object other) {
     return other is TimesheetStruct &&
-        timesheetId == other.timesheetId &&
+        id == other.id &&
         userId == other.userId &&
         timeIn == other.timeIn &&
-        timeOut == other.timeOut &&
-        dateCreated == other.dateCreated &&
-        dateModified == other.dateModified;
+        timeOut == other.timeOut;
   }
 
   @override
-  int get hashCode => const ListEquality()
-      .hash([timesheetId, userId, timeIn, timeOut, dateCreated, dateModified]);
+  int get hashCode => const ListEquality().hash([id, userId, timeIn, timeOut]);
 }
 
 TimesheetStruct createTimesheetStruct({
-  int? timesheetId,
+  int? id,
   int? userId,
   DateTime? timeIn,
   DateTime? timeOut,
-  DateTime? dateCreated,
-  DateTime? dateModified,
 }) =>
     TimesheetStruct(
-      timesheetId: timesheetId,
+      id: id,
       userId: userId,
       timeIn: timeIn,
       timeOut: timeOut,
-      dateCreated: dateCreated,
-      dateModified: dateModified,
     );

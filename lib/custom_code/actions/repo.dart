@@ -112,7 +112,7 @@ class Repo {
       var res = await db.update(
         tbl,
         col,
-        where: 'id=? AND is_deleted=?', // Temporary column for softDelete
+        where: 'id=?', // Temporary column for softDelete
         whereArgs: [id, 0],
         conflictAlgorithm: sql.ConflictAlgorithm.rollback,
       );
@@ -129,7 +129,7 @@ class Repo {
       await db.update(
         tbl,
         {'isDeleted': 1}, // Temporary column for softDelete
-        where: 'id = ? AND isDeleted = ?',
+        where: 'id = ?',
         whereArgs: [id, 0],
         conflictAlgorithm: sql.ConflictAlgorithm.rollback,
       );

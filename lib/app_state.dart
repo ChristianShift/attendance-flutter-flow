@@ -58,6 +58,12 @@ class FFAppState extends ChangeNotifier {
   set timeOut(DateTime? _value) {
     _timeOut = _value;
   }
+
+  int _timesheetId = 0;
+  int get timesheetId => _timesheetId;
+  set timesheetId(int _value) {
+    _timesheetId = _value;
+  }
 }
 
 LatLng? _latLngFromString(String? val) {
