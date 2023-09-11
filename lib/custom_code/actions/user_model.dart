@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 import '../actions/repo.dart';
 import 'package:crypt/crypt.dart';
 
@@ -31,6 +33,7 @@ class UserModel {
   }
 
   static Future<dynamic> login(String userName, String password) async {
+    Map<String, dynamic> empty = {};
     String pWord = password;
     String uName = userName;
 
@@ -43,10 +46,10 @@ class UserModel {
       if (h.match(pWord)) {
         return res;
       } else {
-        return {};
+        return [empty];
       }
     } else {
-      return {};
+      return [empty];
     }
   }
 

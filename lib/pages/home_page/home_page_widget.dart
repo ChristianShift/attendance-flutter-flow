@@ -181,7 +181,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     ),
                               ),
                               TextSpan(
-                                text: FFAppState().firstName,
+                                text: valueOrDefault<String>(
+                                  FFAppState().firstName,
+                                  'Juan',
+                                ),
                                 style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 19.0,

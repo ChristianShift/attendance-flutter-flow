@@ -111,7 +111,10 @@ class _SideBarWidgetState extends State<SideBarWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Text(
-                                        '${functions.capitalizeFunction(FFAppState().lastName)}, ${functions.capitalizeFunction(FFAppState().firstName)}',
+                                        valueOrDefault<String>(
+                                          '${functions.capitalizeFunction(FFAppState().lastName)}, ${functions.capitalizeFunction(FFAppState().firstName)}',
+                                          'Juan Dela Cruz',
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
