@@ -55,14 +55,14 @@ class _RegistrationPageWidgetState extends State<RegistrationPageWidget> {
           child: Stack(
             children: [
               Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.00, 0.00),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.00, 0.00),
                       child: Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
@@ -78,7 +78,7 @@ class _RegistrationPageWidgetState extends State<RegistrationPageWidget> {
                                     .primaryBackground,
                                 shape: BoxShape.circle,
                               ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.00, 0.00),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(10.0),
                                 child: Image.asset(
@@ -107,7 +107,7 @@ class _RegistrationPageWidgetState extends State<RegistrationPageWidget> {
                                 width: 250.0,
                                 decoration: BoxDecoration(),
                                 child: Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.00, 0.00),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         2.0, 2.0, 2.0, 2.0),
@@ -222,7 +222,7 @@ class _RegistrationPageWidgetState extends State<RegistrationPageWidget> {
                                 width: 250.0,
                                 decoration: BoxDecoration(),
                                 child: Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.00, 0.00),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         2.0, 2.0, 2.0, 2.0),
@@ -344,7 +344,7 @@ class _RegistrationPageWidgetState extends State<RegistrationPageWidget> {
                                 width: 250.0,
                                 decoration: BoxDecoration(),
                                 child: Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.00, 0.00),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         2.0, 2.0, 2.0, 2.0),
@@ -463,7 +463,7 @@ class _RegistrationPageWidgetState extends State<RegistrationPageWidget> {
                                 width: 250.0,
                                 decoration: BoxDecoration(),
                                 child: Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.00, 0.00),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         2.0, 2.0, 2.0, 2.0),
@@ -601,6 +601,8 @@ class _RegistrationPageWidgetState extends State<RegistrationPageWidget> {
                                       ),
                                     ),
                                     RichText(
+                                      textScaleFactor: MediaQuery.of(context)
+                                          .textScaleFactor,
                                       text: TextSpan(
                                         children: [
                                           TextSpan(
@@ -757,6 +759,8 @@ class _RegistrationPageWidgetState extends State<RegistrationPageWidget> {
                                 );
                               },
                               child: RichText(
+                                textScaleFactor:
+                                    MediaQuery.of(context).textScaleFactor,
                                 text: TextSpan(
                                   children: [
                                     TextSpan(

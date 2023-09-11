@@ -7,18 +7,17 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import 'user_model.dart';
-import 'user_database_helper.dart';
-import 'database_helper.dart';
+import './user_database_helper.dart';
 
-// Set your action name, define your arguments and return parameter,
-// and then add the boilerplate code using the button on the right!
-
-Future<dynamic?> loginAction(
+Future<List<UsersStruct>?> loginAction(
   String userName,
   String password,
 ) async {
   var response = await UserDatabaseHelper.login(userName, password);
-  print('RESP: $response');
-  return response;
+
+  if (response.length > 0) {
+    return response;
+  } else {
+    return null;
+  }
 }

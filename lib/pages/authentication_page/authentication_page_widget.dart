@@ -1,7 +1,8 @@
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/random_data_util.dart' as random_data;
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -57,7 +58,7 @@ class _AuthenticationPageWidgetState extends State<AuthenticationPageWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.00, 0.00),
                     child: Padding(
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 30.0),
@@ -245,10 +246,53 @@ class _AuthenticationPageWidgetState extends State<AuthenticationPageWidget> {
                                   0.0, 30.0, 40.0, 40.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  setState(() {
-                                    FFAppState().timeOut =
-                                        random_data.randomDate();
-                                  });
+                                  _model.loginResponse =
+                                      await actions.loginAction(
+                                    _model.emailAddressController.text,
+                                    _model.passwordController.text,
+                                  );
+                                  if (_model.loginResponse!.length > 0) {
+                                    FFAppState().userName =
+                                        _model.loginResponse!.first.userName;
+                                    FFAppState().userId =
+                                        _model.loginResponse!.first.id;
+                                    FFAppState().firstName =
+                                        _model.loginResponse!.first.firstName;
+                                    FFAppState().lastName =
+                                        _model.loginResponse!.first.lastName;
+
+                                    context.goNamed(
+                                      'HomePage',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 0),
+                                        ),
+                                      },
+                                    );
+                                  } else {
+                                    await showDialog(
+                                      context: context,
+                                      builder: (alertDialogContext) {
+                                        return AlertDialog(
+                                          title: Text('Login'),
+                                          content:
+                                              Text('Something went wrong!'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: Text('Ok'),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  }
+
+                                  setState(() {});
                                 },
                                 text: 'Sign In',
                                 options: FFButtonOptions(
@@ -360,7 +404,7 @@ class _AuthenticationPageWidgetState extends State<AuthenticationPageWidget> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(-1.0, 1.0),
+                                alignment: AlignmentDirectional(-1.00, 1.00),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 0.0, 0.0),
@@ -417,7 +461,7 @@ class _AuthenticationPageWidgetState extends State<AuthenticationPageWidget> {
                                     ],
                                     shape: BoxShape.circle,
                                   ),
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.00, 0.00),
                                   child: FaIcon(
                                     FontAwesomeIcons.google,
                                     color: FlutterFlowTheme.of(context)
@@ -440,7 +484,7 @@ class _AuthenticationPageWidgetState extends State<AuthenticationPageWidget> {
                                   ],
                                   shape: BoxShape.circle,
                                 ),
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.00, 0.00),
                                 child: FaIcon(
                                   FontAwesomeIcons.apple,
                                   color: FlutterFlowTheme.of(context)
@@ -462,7 +506,7 @@ class _AuthenticationPageWidgetState extends State<AuthenticationPageWidget> {
                                   ],
                                   shape: BoxShape.circle,
                                 ),
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.00, 0.00),
                                 child: FaIcon(
                                   FontAwesomeIcons.facebookF,
                                   color: FlutterFlowTheme.of(context)
@@ -484,7 +528,7 @@ class _AuthenticationPageWidgetState extends State<AuthenticationPageWidget> {
                                   ],
                                   shape: BoxShape.circle,
                                 ),
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.00, 0.00),
                                 child: Icon(
                                   Icons.phone_sharp,
                                   color: FlutterFlowTheme.of(context)

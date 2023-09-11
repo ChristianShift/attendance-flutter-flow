@@ -2,6 +2,7 @@ import '/components/side_bar/side_bar_widget.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -136,7 +137,7 @@ class _AttendanceTrackerWidgetState extends State<AttendanceTrackerWidget> {
                                   .primaryBackground,
                               shape: BoxShape.rectangle,
                             ),
-                            alignment: AlignmentDirectional(-1.0, 0.0),
+                            alignment: AlignmentDirectional(-1.00, 0.00),
                             child: Text(
                               'Your attendance',
                               textAlign: TextAlign.start,
@@ -177,7 +178,7 @@ class _AttendanceTrackerWidgetState extends State<AttendanceTrackerWidget> {
                                     borderRadius: BorderRadius.circular(15.0),
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.00, 0.00),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -305,7 +306,7 @@ class _AttendanceTrackerWidgetState extends State<AttendanceTrackerWidget> {
                                   .primaryBackground,
                               shape: BoxShape.rectangle,
                             ),
-                            alignment: AlignmentDirectional(-1.0, 0.0),
+                            alignment: AlignmentDirectional(-1.00, 0.00),
                             child: Text(
                               'Events / Meetings',
                               textAlign: TextAlign.start,
@@ -365,7 +366,7 @@ class _AttendanceTrackerWidgetState extends State<AttendanceTrackerWidget> {
                                   ),
                                 ),
                                 collapsed: Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.00, 0.00),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         7.0, 7.0, 7.0, 10.0),
@@ -378,6 +379,9 @@ class _AttendanceTrackerWidgetState extends State<AttendanceTrackerWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             RichText(
+                                              textScaleFactor:
+                                                  MediaQuery.of(context)
+                                                      .textScaleFactor,
                                               text: TextSpan(
                                                 children: [
                                                   TextSpan(
@@ -417,6 +421,9 @@ class _AttendanceTrackerWidgetState extends State<AttendanceTrackerWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             RichText(
+                                              textScaleFactor:
+                                                  MediaQuery.of(context)
+                                                      .textScaleFactor,
                                               text: TextSpan(
                                                 children: [
                                                   TextSpan(

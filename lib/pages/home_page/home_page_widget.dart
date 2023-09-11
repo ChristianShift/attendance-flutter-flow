@@ -161,8 +161,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         color: FlutterFlowTheme.of(context).primaryBackground,
                       ),
                       child: Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        alignment: AlignmentDirectional(-1.00, 0.00),
                         child: RichText(
+                          textScaleFactor:
+                              MediaQuery.of(context).textScaleFactor,
                           text: TextSpan(
                             children: [
                               TextSpan(
@@ -204,6 +206,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             RichText(
+                              textScaleFactor:
+                                  MediaQuery.of(context).textScaleFactor,
                               text: TextSpan(
                                 children: [
                                   TextSpan(
@@ -240,6 +244,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               ),
                             ),
                             RichText(
+                              textScaleFactor:
+                                  MediaQuery.of(context).textScaleFactor,
                               text: TextSpan(
                                 children: [
                                   TextSpan(
@@ -393,7 +399,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   )
                                 ],
                               ),
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.00, 0.00),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 2.0, 0.0, 2.0),
@@ -477,6 +483,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                   ),
                                                   Expanded(
                                                     child: RichText(
+                                                      textScaleFactor:
+                                                          MediaQuery.of(context)
+                                                              .textScaleFactor,
                                                       text: TextSpan(
                                                         children: [
                                                           TextSpan(
@@ -587,7 +596,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                               ),
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.00, 0.00),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 2.0, 0.0, 2.0),
@@ -669,6 +678,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                   ),
                                                   Expanded(
                                                     child: RichText(
+                                                      textScaleFactor:
+                                                          MediaQuery.of(context)
+                                                              .textScaleFactor,
                                                       text: TextSpan(
                                                         children: [
                                                           TextSpan(

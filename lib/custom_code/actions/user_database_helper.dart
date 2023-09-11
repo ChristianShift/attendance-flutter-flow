@@ -38,10 +38,14 @@ class UserDatabaseHelper {
       if (h.match(pWord)) {
         return res;
       } else {
-        return {'message': 'wrong password'};
+        return [
+          {'message': 'wrong password'}
+        ];
       }
     } else {
-      return {'message': 'no user'};
+      return [
+        {'message': 'no user'}
+      ];
     }
   }
 

@@ -30,7 +30,7 @@ class _TaskPageWidgetState extends State<TaskPageWidget>
       vsync: this,
       length: 3,
       initialIndex: 0,
-    );
+    )..addListener(() => setState(() {}));
     _model.textController ??= TextEditingController();
   }
 
@@ -56,7 +56,7 @@ class _TaskPageWidgetState extends State<TaskPageWidget>
           children: [
             Expanded(
               child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.00, -1.00),
                 child: Padding(
                   padding:
                       EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
@@ -165,7 +165,6 @@ class _TaskPageWidgetState extends State<TaskPageWidget>
                                       ),
                                     ],
                                     controller: _model.tabBarController,
-                                    onTap: (value) => setState(() {}),
                                   ),
                                 ),
                                 Expanded(
@@ -174,7 +173,7 @@ class _TaskPageWidgetState extends State<TaskPageWidget>
                                     children: [
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.00, 0.00),
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
@@ -252,7 +251,7 @@ class _TaskPageWidgetState extends State<TaskPageWidget>
                                                         ),
                                                         alignment:
                                                             AlignmentDirectional(
-                                                                0.0, 0.0),
+                                                                0.00, 0.00),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
@@ -400,7 +399,7 @@ class _TaskPageWidgetState extends State<TaskPageWidget>
                                                                                 color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                 borderRadius: BorderRadius.circular(8.0),
                                                                               ),
-                                                                              alignment: AlignmentDirectional(0.0, 0.0),
+                                                                              alignment: AlignmentDirectional(0.00, 0.00),
                                                                               child: Padding(
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                 child: Text(
@@ -537,7 +536,7 @@ class _TaskPageWidgetState extends State<TaskPageWidget>
                                                                                 color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                 borderRadius: BorderRadius.circular(8.0),
                                                                               ),
-                                                                              alignment: AlignmentDirectional(0.0, 0.0),
+                                                                              alignment: AlignmentDirectional(0.00, 0.00),
                                                                               child: Padding(
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                 child: Text(
@@ -670,7 +669,7 @@ class _TaskPageWidgetState extends State<TaskPageWidget>
                                                                                 color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                 borderRadius: BorderRadius.circular(8.0),
                                                                               ),
-                                                                              alignment: AlignmentDirectional(0.0, 0.0),
+                                                                              alignment: AlignmentDirectional(0.00, 0.00),
                                                                               child: Padding(
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                 child: Text(
@@ -700,7 +699,7 @@ class _TaskPageWidgetState extends State<TaskPageWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.00, 0.00),
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
@@ -778,7 +777,7 @@ class _TaskPageWidgetState extends State<TaskPageWidget>
                                                         ),
                                                         alignment:
                                                             AlignmentDirectional(
-                                                                0.0, 0.0),
+                                                                0.00, 0.00),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
@@ -926,7 +925,7 @@ class _TaskPageWidgetState extends State<TaskPageWidget>
                                                                                 color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                 borderRadius: BorderRadius.circular(8.0),
                                                                               ),
-                                                                              alignment: AlignmentDirectional(0.0, 0.0),
+                                                                              alignment: AlignmentDirectional(0.00, 0.00),
                                                                               child: Padding(
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                 child: Text(
@@ -1063,7 +1062,7 @@ class _TaskPageWidgetState extends State<TaskPageWidget>
                                                                                 color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                 borderRadius: BorderRadius.circular(8.0),
                                                                               ),
-                                                                              alignment: AlignmentDirectional(0.0, 0.0),
+                                                                              alignment: AlignmentDirectional(0.00, 0.00),
                                                                               child: Padding(
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                 child: Text(
@@ -1196,7 +1195,7 @@ class _TaskPageWidgetState extends State<TaskPageWidget>
                                                                                 color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                 borderRadius: BorderRadius.circular(8.0),
                                                                               ),
-                                                                              alignment: AlignmentDirectional(0.0, 0.0),
+                                                                              alignment: AlignmentDirectional(0.00, 0.00),
                                                                               child: Padding(
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                 child: Text(
@@ -1418,7 +1417,7 @@ class _TaskPageWidgetState extends State<TaskPageWidget>
                                   color: FlutterFlowTheme.of(context).accent1,
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.00, 0.00),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 0.0),
@@ -1439,7 +1438,7 @@ class _TaskPageWidgetState extends State<TaskPageWidget>
                                   color: FlutterFlowTheme.of(context).accent2,
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.00, 0.00),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 0.0),
@@ -1511,7 +1510,7 @@ class _TaskPageWidgetState extends State<TaskPageWidget>
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(1.0, 0.0),
+                        alignment: AlignmentDirectional(1.00, 0.00),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
