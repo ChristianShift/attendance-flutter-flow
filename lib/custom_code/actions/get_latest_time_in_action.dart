@@ -14,10 +14,14 @@ Future<TimesheetStruct?> getLatestTimeInAction(int userId) async {
   // Add your function code here!
 
   var q = await TimesheetModel.getLatestTimeIn(userId);
-  print('Logging Session: $q');
+  print('Latest TimeIn: $q');
   if (q.length > 0) {
-    return TimesheetStruct.fromMap(
-        q[0]); // Using user DataType, used q[0] to get the first index
+    Map<String, dynamic> dt = {
+      'id' : q[0]['id'],
+      'time_in': q[0]['time_in'] != null ? DateTime.parse(q[0]['time_in']) : null,
+      'time_out': q[0]['time_out'] != null ? DateTime.parse(q[0]['time_out']) : null,
+    };
+    return TimesheetStruct.fromMap(dt); // Using user DataType, used q[0] to get the first index
   } else {
     return null;
   }

@@ -38,7 +38,7 @@ class TimesheetModel {
     String dtStr = DateFormat("yyyy-MM-dd").format(DateTime.now());
     try {
       var q = await Repo.rawQuery(
-          'SELECT id, MAX(time_in) as time_in, time_out FROM timesheet WHERE user_id=? AND DATE(time_in) =?',
+          'SELECT id, MAX(time_in) as time_in, MAX(time_out) as time_out FROM timesheet WHERE user_id=? AND DATE(time_in) =?',
           [userId, dtStr]);
       return q;
     } catch (err) {

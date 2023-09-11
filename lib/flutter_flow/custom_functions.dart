@@ -11,5 +11,5 @@ import 'uploaded_file.dart';
 import '/backend/schema/structs/index.dart';
 
 String capitalizeFunction(String string) {
-  return "${string[0].toUpperCase()}${string.substring(1).toLowerCase()}";
+  return string != '' ? '${string[0].toUpperCase()}${string.substring(1).toLowerCase()}' : '';
 }
