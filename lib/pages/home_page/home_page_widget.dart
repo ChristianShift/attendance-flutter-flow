@@ -206,10 +206,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          width: 170.0,
+                          width: 150.0,
                           height: 60.0,
                           child: custom_widgets.ReactiveDate(
-                            width: 170.0,
+                            width: 150.0,
                             height: 60.0,
                           ),
                         ),
