@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -245,10 +246,58 @@ class _AuthenticationPageWidgetState extends State<AuthenticationPageWidget> {
                                   0.0, 30.0, 40.0, 40.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  setState(() {
-                                    FFAppState().timeOut =
-                                        random_data.randomDate();
-                                  });
+                                  _model.loginResponse =
+                                      await actions.loginAction(
+                                    _model.emailAddressController.text,
+                                    _model.passwordController.text,
+                                  );
+                                  if (_model.loginResponse!.length > 0) {
+                                    await showDialog(
+                                      context: context,
+                                      builder: (alertDialogContext) {
+                                        return AlertDialog(
+                                          title: Text(''),
+                                          content: Text('Login Success!'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => context.goNamed(
+                                                'HomePage',
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType.fade,
+                                                    duration: Duration(
+                                                        milliseconds: 0),
+                                                  ),
+                                                },
+                                              ),
+                                              child: Text('Ok'),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  } else {
+                                    await showDialog(
+                                      context: context,
+                                      builder: (alertDialogContext) {
+                                        return AlertDialog(
+                                          title: Text('Error'),
+                                          content: Text('Invalid Credentials'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: Text('Ok'),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  }
+                                  setState(() {});
                                 },
                                 text: 'Sign In',
                                 options: FFButtonOptions(

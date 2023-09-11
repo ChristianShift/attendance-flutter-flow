@@ -1,3 +1,5 @@
+import 'package:attendance_flutter_flow_local/backend/schema/structs/index.dart';
+
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -18,6 +20,8 @@ class AuthenticationPageModel extends FlutterFlowModel {
   TextEditingController? passwordController;
   late bool passwordVisibility;
   String? Function(BuildContext, String?)? passwordControllerValidator;
+  // Stores action output result for [Custom Action - createUserAction] action in Button widget.
+  List<UsersStruct>? loginResponse;
 
   /// Initialization and disposal methods.
 

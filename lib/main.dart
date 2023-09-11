@@ -16,10 +16,8 @@ void main() async {
   usePathUrlStrategy();
 
   // Start initial custom actions code
-  await actions.sqflitecommon();
-  await actions.databaseHelper();
-  await actions.userDatabaseHelper();
-  await actions.userModel();
+  await actions.sqfliteinit();
+  await actions.repo();
   // End initial custom actions code
 
   await FlutterFlowTheme.initialize();

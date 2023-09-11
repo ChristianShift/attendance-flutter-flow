@@ -7,9 +7,10 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+
+// Custom Imports
 import 'user_model.dart';
-import 'user_database_helper.dart';
-import 'database_helper.dart';
+import 'package:crypt/crypt.dart';
 
 Future<String> createUserAction(
   String userName,
@@ -17,13 +18,21 @@ Future<String> createUserAction(
   String firstName,
   String lastName,
 ) async {
-  UserModel user = UserModel(
-    userName: userName,
-    password: password,
-    firstName: firstName,
-    lastName: lastName,
-  );
-  await UserDatabaseHelper.createUser(user);
-  // Add your function code here!
-  return 'success';
+  String response = 'Fail, Something went wrong!';
+  var hashPW = Crypt.sha256(password);
+
+  Map<String, dynamic> col = {
+    'user_name': userName,
+    'password': hashPW.toString(),
+    'first_name': firstName,
+    'last_name': lastName,
+  };
+
+  //code here
+  final q = await UserModel.createUser(col);
+  if (q > 0) {
+    response = 'success';
+  }
+
+  return response;
 }
