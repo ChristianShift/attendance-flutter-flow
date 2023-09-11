@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
-Future sqflitecommon() async {
+Future sqfliteinit() async {
   // if (!kIsWeb) {
   //   sqfliteFfiInit();
   //   // Change the default factory
